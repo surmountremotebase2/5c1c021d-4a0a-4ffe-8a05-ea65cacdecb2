@@ -4,7 +4,7 @@ from surmount.data import InsiderTrading
 class TradingStrategy(Strategy):
     def __init__(self):
         # Specify the ticker for Aviation Archer
-        self.ticker = "ACHR"  # Example ticker, replace with the actual ticker if different
+        self.ticker = "AMZN"  # Example ticker, replace with the actual ticker if different
         # Include InsiderTrading data for analysis
         self.data_list = [InsiderTrading(self.ticker)]
 
