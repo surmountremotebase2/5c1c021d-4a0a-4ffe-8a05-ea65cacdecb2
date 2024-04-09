@@ -27,7 +27,7 @@ class TradingStrategy(Strategy):
         allocation_dict = {ticker: 0 for ticker in self.tickers}
         
         # Calculate the RSI for "ACHR"
-        rsi_values = RSI("ACHR", data["ohlcv"], length=14)
+        rsi_values = RSI("AMZN", data["ohlcv"], length=14)
         
         if rsi_values is None or len(rsi_values) == 0:
             # If no RSI data available, do not invest
@@ -36,14 +36,14 @@ class TradingStrategy(Strategy):
         # Get the most recent RSI value
         latest_rsi = rsi_values[-1]
         
-        log(f"Latest RSI for ACHR: {latest_rsi}")
+        log(f"Latest RSI for AMZN: {latest_rsi}")
         
         # RSI thresholds for overbought and oversold conditions
         oversold_threshold, overbought_threshold = 30, 70
         
         # If RSI indicates oversold conditions, allocate 100% to "ACHR"
         if latest_rsi < oversold_threshold:
-            allocation_dict["ACHR"] = 1.0
+            allocation_dict["AMZN"] = 1.0
         
         # If RSI indicates overbought conditions, keep allocation at 0 (no action needed here)
         
